@@ -15,8 +15,8 @@ services:
             connector: postgres
             host: ec2-54-228-212-134.eu-west-1.compute.amazonaws.com
             database: d7757i9e0s79mr
-            ssl: true
             user: xvmvvvgmirzoji
+            ssl: true
             password: 425a158900ae1428eb9a15b6b386b0fe33a6c36d5eec71705a49e9816aee3853
             rawAccess: true
             port: '5432'
