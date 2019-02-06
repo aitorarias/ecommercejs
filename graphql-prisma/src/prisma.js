@@ -31,15 +31,15 @@ const createPostForUser = async (authorId, data) => {
     return post.author
 }
 
-// createPostForUser("cjrrwi7jn03md0768gr83omda", {
-//     title: "Esto es un post con asíncronas",
-//     body: "Las asíncronas son mejores a la hora de traer datos anidados, en vez de hacerlo por continuos callbacks. Un async siempre devuelve algo",
-//     published: true
-// }).then((user) => {
-//     console.log(JSON.stringify(user, undefined, 2))
-// }).catch((error) => {
-//     console.log(error.message)
-// })
+createPostForUser("cjrrwi7jn03md0768gr83omda", {
+    title: "Esto es un post con asíncronas",
+    body: "Las asíncronas son mejores a la hora de traer datos anidados, en vez de hacerlo por continuos callbacks. Un async siempre devuelve algo",
+    published: true
+}).then((user) => {
+    console.log(JSON.stringify(user, undefined, 2))
+}).catch((error) => {
+    console.log(error.message)
+})
 
 
 const updatePostForUser = async (postId, data) => {
