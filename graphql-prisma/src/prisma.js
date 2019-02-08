@@ -1,29 +1,31 @@
 import {
     Prisma
-} from "prisma-binding";
+} from 'prisma-binding'
+import {
+    fragmentReplacements
+} from './resolvers/index'
 
 const prisma = new Prisma({
     typeDefs: 'src/generated/prisma.graphql',
     endpoint: 'http://localhost:4466',
-    secret: 'thisismypass'
+    secret: 'thisismypass',
+    fragmentReplacements
 })
 
 export {
     prisma as
     default
-};
+}
 
-//prisma.query prisma.mutation prisma.subscription prisma.exits
+// prisma.query prisma.mutation prisma.subscription prisma.exists
 
 // const createPostForUser = async (authorId, data) => {
-
-//     const userExists = await prisma.exists.User({
-//         id: authorId
-//     })
+//     const userExists = await prisma.exists.User({ id: authorId })
 
 //     if (!userExists) {
 //         throw new Error('User not found')
 //     }
+
 //     const post = await prisma.mutation.createPost({
 //         data: {
 //             ...data,
@@ -33,27 +35,25 @@ export {
 //                 }
 //             }
 //         }
-//     }, '{author {id name email posts {id title published} } }')
+//     }, '{ author { id name email posts { id title published } } }')
+
 //     return post.author
 // }
 
-// createPostForUser("cjrrwi7jn03md0768gr83omda", {
-//     title: "Esto es un post con asíncronas",
-//     body: "Las asíncronas son mejores a la hora de traer datos anidados, en vez de hacerlo por continuos callbacks. Un async siempre devuelve algo",
-//     published: true
-// }).then((user) => {
-//     console.log(JSON.stringify(user, undefined, 2))
-// }).catch((error) => {
-//     console.log(error.message)
-// })
-
+// // createPostForUser('cjjybkwx5006h0822n32vw7dj', {
+// //     title: 'Great books to read',
+// //     body: 'The War of Art',
+// //     published: true
+// // }).then((user) => {
+// //     console.log(JSON.stringify(user, undefined, 2))
+// // }).catch((error) => {
+// //     console.log(error.message)
+// // })
 
 // const updatePostForUser = async (postId, data) => {
-//     const postExits = await prisma.exists.Post({
-//         id: postId
-//     })
+//     const postExists = await prisma.exists.Post({ id: postId })
 
-//     if (!postExits) {
+//     if (!postExists) {
 //         throw new Error('Post not found')
 //     }
 
@@ -62,15 +62,13 @@ export {
 //             id: postId
 //         },
 //         data
-//     }, '{author { id name email posts {id title published } } }')
+//     }, '{ author { id name email posts { id title published } } }')
 
 //     return post.author
 // }
 
-// updatePostForUser("cjrrwtjad03tm07684zfarwpm", {
-//     published: false
-// }).then((user) => {
-//     console.log(JSON.stringify(user, undefined, 2))
-// }).catch((error) => {
-//     console.log(error.message)
-// })
+// // updatePostForUser("power", { published: true }).then((user) => {
+// //     console.log(JSON.stringify(user, undefined, 2))
+// // }).catch((error) => {
+// //     console.log(error.message)
+// // })
