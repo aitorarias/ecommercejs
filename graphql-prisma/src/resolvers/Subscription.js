@@ -51,7 +51,4 @@ const Subscription = {
 	}
 }
 
-export {
-	Subscription as
-	default
-}
+export { Subscription as default }
